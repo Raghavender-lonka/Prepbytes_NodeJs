@@ -3,7 +3,8 @@ const http = require("http")
 
 http
   .createServer((req, res) => {
-    res.write("hi")
+    res.write("hello there")
+    // res.write(JSON.stringify({ name:"Raghu", batch: 'DEC'}))
     res.end()
   })
   .listen(8000)
