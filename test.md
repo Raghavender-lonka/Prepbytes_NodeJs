@@ -1,3 +1,5 @@
+# Node.js
+
 Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
 Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.
@@ -8,6 +10,8 @@ When Node.js performs an I/O operation, like reading from the network, accessing
 
 This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.
 
+# Node modules
+
 http, https, fs, path, os these are some node core modules
 
 -> http helps us with lauching a server, also with other tasks like sending requests because a node app could also send a request to another server,
@@ -17,6 +21,8 @@ http, https, fs, path, os these are some node core modules
 -> path module helps us with constructing paths to file on a file system that work on any operating system because windows and mac and linux use different path formats.
 
 -> OS package helps us with operating system, relevant information and so on
+
+# process of creating package and configure start
 
 1. create a package.json file
 
