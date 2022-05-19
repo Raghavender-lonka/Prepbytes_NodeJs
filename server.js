@@ -7,19 +7,39 @@ const port = 8000
 //creating app object
 const app = express()
 
+// middlewares
+
+const middleware1 = (req, res, next) => {
+  console.log("I am middleware1")
+  next()
+}
+
+const middleware2 = (req, res, next) => {
+  console.log("I am middleware2")
+  next()
+}
+
+app.use(middleware1) // application-level middleware
+
 // route creation
 
 // home route
-app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
   res.send("Hello there") //text
 })
 
-app.get("/api/main", (req, res, next) => {
-  res.write("<h1>Express.Js</h1>")
-  res.write(
-    "<p>Express  is a light-weight web application framework to help organize your web application into an MVC architecture on the server side. You can then use a database like MongoDB  to provide a backend for your Node.js application. Express.js basically helps you manage everything, from routes, to handling requests and views.</p>"
-  )
-  res.end()
+app.get("/home", (req, res) => {
+  res.send("<h1>Home Page<h1>")
+})
+
+// middleware2 applies only to this routes
+
+app.get("/product", middleware2, (req, res, next) => {
+  res.send("<h1>Choose from our Products ...</h1>")
+})
+
+app.get("/contact", middleware2, (req, res) => {
+  res.send("<h1>Contact No: +91-999999999</h1>")
 })
 
 app.listen(port)
