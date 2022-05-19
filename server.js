@@ -9,12 +9,12 @@ const app = express()
 
 // middlewares
 
-const middleware1 = (req, res) => {
+const middleware1 = (req, res, next) => {
   console.log("I am middleware1")
   next()
 }
 
-const middleware2 = (req, res) => {
+const middleware2 = (req, res, next) => {
   console.log("I am middleware2")
   next()
 }
