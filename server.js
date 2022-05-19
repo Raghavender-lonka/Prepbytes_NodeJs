@@ -9,12 +9,12 @@ const app = express()
 
 // middlewares
 
-const middleware1 = (req, res, next) => {
+const middleware1 = (req, res) => {
   console.log("I am middleware1")
   next()
 }
 
-const middleware2 = (req, res, next) => {
+const middleware2 = (req, res) => {
   console.log("I am middleware2")
   next()
 }
@@ -34,7 +34,7 @@ app.get("/home", (req, res) => {
 
 // middleware2 applies only to this routes
 
-app.get("/product", middleware2, (req, res, next) => {
+app.get("/product", middleware2, (req, res) => {
   res.send("<h1>Choose from our Products ...</h1>")
 })
 
